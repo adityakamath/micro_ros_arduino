@@ -6,7 +6,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # find dependencies
-find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -22,10 +21,19 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+
+set(msg_files
+  msg/Mode.msg
+  msg/Velocities.msg
+  msg/Feedback.msg
+)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/Mode.msg"
+  ${msg_files}
+  DEPENDENCIES std_msgs
  )
 
 ament_package()
