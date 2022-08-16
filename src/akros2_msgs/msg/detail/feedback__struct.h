@@ -20,7 +20,7 @@ extern "C"
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.h"
-// Member 'current'
+// Member 'measured'
 // Member 'required'
 #include "akros2_msgs/msg/detail/velocities__struct.h"
 
@@ -28,7 +28,7 @@ extern "C"
 typedef struct akros2_msgs__msg__Feedback
 {
   std_msgs__msg__Header header;
-  akros2_msgs__msg__Velocities current;
+  akros2_msgs__msg__Velocities measured;
   akros2_msgs__msg__Velocities required;
 } akros2_msgs__msg__Feedback;
 

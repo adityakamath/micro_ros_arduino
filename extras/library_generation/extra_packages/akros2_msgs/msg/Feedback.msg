@@ -1,3 +1,3 @@
 std_msgs/Header header
-Velocities current
+Velocities measured
 Velocities required
